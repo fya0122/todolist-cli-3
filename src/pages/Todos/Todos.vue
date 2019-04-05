@@ -1,6 +1,5 @@
 <template>
   <div>
-    <TodoHeader/>
     <AddTodoItem @addtodoitem="addtodoitem"/>
     <div v-for="item of todos" :key="item.id">
       <TodoItem @deltodoitem="deltodoitem" @changecheckboxvalue="changecheckboxvalue" :todo="item"/>
@@ -9,7 +8,6 @@
 </template>
 <script>
   import TodoItem from './components/TodoItem.vue'
-  import TodoHeader from './components/TodoHeader.vue'
   import AddTodoItem from './components/AddTodoItem.vue'
   // import uuid from 'uuid'
   import axios from 'axios'
@@ -39,7 +37,6 @@
     },
     components: {
       TodoItem,
-      TodoHeader,
       AddTodoItem
     },
     methods: {

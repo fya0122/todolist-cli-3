@@ -1,11 +1,20 @@
 <template>
   <div id="app">
-    <router-view/>
+    <TodoHeader/>
+    <!-- 里面的组件是不会走第二次created生命周期了呢 -->
+    <keep-alive>
+      <router-view/>
+    </keep-alive>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'app',
-}
+  import TodoHeader from './components/TodoHeader.vue'
+
+  export default {
+    name: 'app',
+    components: {
+      TodoHeader
+    }
+  }
 </script>

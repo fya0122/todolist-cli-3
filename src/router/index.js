@@ -6,11 +6,10 @@ Vue.use(Router)
 let router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes: [{
-    path: '/',
-    name: 'Todos',
-    component: () => import('../pages/Todos/Todos.vue')
-  }]
+  routes: [
+    {path: '/', name: 'Todos', component: () => import('../pages/Todos/Todos.vue')},
+    {path: '/about', name: 'About', component: () => import('../pages/About/About.vue')}
+  ]
 })
 router.beforeEach((to, form, next) => {
   next()
